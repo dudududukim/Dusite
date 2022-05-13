@@ -149,31 +149,35 @@
   <div class="visitors_group">
     <div id="input_pack">
         <div class="input_box">
-          <input type="text" v-model="input_msg" placeholder="작성란" v-on:keyup.enter="addmsg(input_msg)">
+          <input id="vistors_msg" type="text" v-model="input_msg" placeholder="작성란" v-on:keyup.enter="addmsg(input_msg)">
         </div>
         <div class="input_button">
           <button @click="addmsg(input_msg)">입력</button>
         </div>
     </div>
-    <div id="list_group">
+    <div id="list_pack">
       <table class="visitor_list">
         <caption>
         </caption>
         <colgroup>
-          <col class="col_message">
           <col class="col_date">
+          <col class="col_message">
         </colgroup>
         <tr id="each_writing" v-for="(msg, i) in messages" :key="i">
+          <td>
+              <p class="date">
+              {{msg.date}}
+            </p>
+            <i class="cline"></i>
+          </td>
           <td>
             <p class="post_title">
               {{msg.message}}
             </p>
+            <i class="cline"></i>
           </td>
-          <td>
-            <p class="date">
-              {{msg.date}}
-            </p>
-          </td>
+          
+          <i class="cline" v-if="false"></i>
         </tr>
       </table>
     </div>

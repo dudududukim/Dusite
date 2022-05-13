@@ -283,8 +283,6 @@
     font-size: 120%;
 }
 
-
-
 .wrt_post_list .date{
     font-size: 120%;
 }
@@ -296,8 +294,6 @@
     padding: 6px 3px 3px;
     letter-spacing: -2px;
 }
-
-
 
 .blind{
     overflow: hidden!important;
@@ -344,7 +340,7 @@ span {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'PC_tele';
+    font-family: 'PC_tele', 'PC_tele_eng';
     background-color: #fafbfc;
     /* IE scroll 숨김 */
     -ms-overflow-style: none;
@@ -359,10 +355,6 @@ body::-webkit-scrollbar {
     font-family: 'PC_tele';
     src: url(../font/DungGeunMo.ttf);
 }
-
-
-
-
 
 #visit_container {
     width: 1100px;
@@ -394,8 +386,21 @@ body::-webkit-scrollbar {
 
 .input_box input{
     width: 700px;
-    height: 40px;
+    min-height: 40px;
+    overflow: auto;
     text-align: center;
+    font-family: 'PC_tele';
+    border-radius: 6px;
+    border: 1px solid;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(20, 21, 21);
+    font-size: 110%;
+
+}
+
+.input_box input::placeholder{
+    color: rgb(38, 0, 255);
+    letter-spacing: 5px;
 }
 
 .input_button{
@@ -408,10 +413,14 @@ body::-webkit-scrollbar {
     height: 44px;
     cursor: pointer;
     padding: 0 15px 0;
+    font-family: 'PC_tele';
+    background-color: rgba(0, 0, 0, 0.063);
+    border: none;
+    border-radius: 6px;
+    
 }
 
-#list_group{
-    margin: 0 36px;
+#list_pack{
     position: relative;
     padding-bottom: 24px;
 }
@@ -420,7 +429,7 @@ body::-webkit-scrollbar {
     table-layout: fixed;
     width: 100%;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 30px;
 }
 
 .visitor_list .col_message{
@@ -428,5 +437,18 @@ body::-webkit-scrollbar {
 }
 
 .visitor_list .col_date{
-    width: 105px!important;
+    width: 120px!important;
+}
+
+.visitor_list td{
+    position: relative;
+}
+
+.visitor_list .date{
+    font-size: 105%;
+}
+
+.visitor_list td .cline{
+    border-bottom-color: rgb(154, 154, 154)!important;
+    margin-bottom: -2px;
 }
