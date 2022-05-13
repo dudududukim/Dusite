@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/JPG/old-computer.ico">
     <title>김두현PC</title>
 </head>
 <body>
@@ -24,7 +23,7 @@
                     <div class="category_more">
                         <ul class="c_more">
                             <li class="sns" v-for="(side_menu, i) in side_menus" :key="i">
-                            
+
                                 <a class="tab" :href="side_menu.url">
                                     {{side_menu.name}}
                                 </a>
@@ -36,7 +35,7 @@
         </div>
         <div id="container">
             container(developing....), only writing and phogograph part is literally active.
-            <div id="img_container" v-if="visible['전시관']">
+            <div id="img_container" v-show="visible['전시관']">
                 <h1 class="blind">
                     갤러기 결과
                 </h1>
@@ -63,7 +62,7 @@
                     </section>
                 </div>
             </div>
-            <div id="wrt_contents" v-if="visible['글']">
+            <div id="wrt_container" v-show="visible['글']">
                 <div class="wrt_group">
                     <div class="wrt_group_post">
                         <div class="wrt_group_header">
@@ -87,14 +86,14 @@
                                 <tr id="table_header">
                                     <th>
                                         <span class="num">
-                                            번호i
+                                            번호
                                         </span>
                                     </th>
                                     <th>
                                         <span class="click">
                                             조회
                                         </span>
-                                        
+
                                     </th>
                                     <th>
                                         <span class="post_title">
@@ -143,6 +142,43 @@
                     </div>
                 </div>
             </div>
+            <div id="info_container" v-show="visible['소개']">
+
+            </div>
+            <div id="visit_container" v-show="visible['방명록']">
+                <div id="input_group">
+                    <div class="input_pack">
+                        <div class="input_box">
+                            <input type="text" v-model="input_msg" placeholder="작성란" v-on:keyup.enter="addmsg(input_msg)">
+                        </div>
+                        <div id="input_button">
+                            <button @click="addmsg(input_msg)">입력</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="list_group">
+                    <table class="wrt_post_list">
+                        <caption>
+                        </caption>
+                        <colgroup>
+                            <col class="col_message">
+                            <col class="col_date">
+                        </colgroup>
+                        <tr id="each_writing" v-for="(msg, i) in messages" :key="i">
+                            <td>
+                                <span class="post_title">
+                                    {{msg.message}}
+                                </span>
+                            </td>
+                            <td>
+                                <span class="date">
+                                    {{msg.date}}
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -177,7 +213,9 @@ export default {
             {num : 2, clicks: 0, title: 'title2_oqm;xcv', date: '2020.09.08'},
             {num : 1, clicks: 0, title: 'title1_first', date: '2020.07.20'},
             ],
-        visible : {'전시관' : false, '글': false, vistor: false, info : false},
+        messages : [],
+        input_msg :'',
+        visible : {'전시관' : false, '글': false, '방명록': false, '소개' : false},
         clicks : [0, 0, 0, 0, 0]
     }
   },
@@ -192,6 +230,12 @@ export default {
       toclick(num){
             console.log(num);
             this.clicks[this.writings.length - num]++;
+      },
+      addmsg(msg){
+          let today = new Date();
+          var inputmsg = {date: today.toLocaleDateString(), message: msg};
+          this.messages.unshift(inputmsg);
+          this.input_msg = '';
       },
   }
 }
