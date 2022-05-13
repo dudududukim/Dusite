@@ -146,38 +146,39 @@
 
             </div>
             <div id="visit_container" v-show="visible['방명록']">
-                <div id="input_group">
-                    <div class="input_pack">
-                        <div class="input_box">
-                            <input type="text" v-model="input_msg" placeholder="작성란" v-on:keyup.enter="addmsg(input_msg)">
-                        </div>
-                        <div id="input_button">
-                            <button @click="addmsg(input_msg)">입력</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="list_group">
-                    <table class="wrt_post_list">
-                        <caption>
-                        </caption>
-                        <colgroup>
-                            <col class="col_message">
-                            <col class="col_date">
-                        </colgroup>
-                        <tr id="each_writing" v-for="(msg, i) in messages" :key="i">
-                            <td>
-                                <span class="post_title">
-                                    {{msg.message}}
-                                </span>
-                            </td>
-                            <td>
-                                <span class="date">
-                                    {{msg.date}}
-                                </span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+  <div class="visitors_group">
+    <div id="input_pack">
+        <div class="input_box">
+          <input type="text" v-model="input_msg" placeholder="작성란" v-on:keyup.enter="addmsg(input_msg)">
+        </div>
+        <div class="input_button">
+          <button @click="addmsg(input_msg)">입력</button>
+        </div>
+    </div>
+    <div id="list_group">
+      <table class="visitor_list">
+        <caption>
+        </caption>
+        <colgroup>
+          <col class="col_message">
+          <col class="col_date">
+        </colgroup>
+        <tr id="each_writing" v-for="(msg, i) in messages" :key="i">
+          <td>
+            <p class="post_title">
+              {{msg.message}}
+            </p>
+          </td>
+          <td>
+            <p class="date">
+              {{msg.date}}
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
             </div>
         </div>
     </div>

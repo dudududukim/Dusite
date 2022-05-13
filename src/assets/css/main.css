@@ -254,6 +254,11 @@
     position: relative;
 }
 
+.wrt_post_list .post_title{
+    position: relative;
+    width: 100%;
+}
+
 .wrt_post_list colgroup .col_num{
     width: 83px!important;
 }
@@ -292,6 +297,8 @@
     letter-spacing: -2px;
 }
 
+
+
 .blind{
     overflow: hidden!important;
     position: absolute!important;
@@ -326,6 +333,9 @@ ol,
 li,
 h1,
 h3,
+p,
+input,
+button,
 span {
     margin: 0;
     padding: 0;
@@ -350,3 +360,73 @@ body::-webkit-scrollbar {
     src: url(../font/DungGeunMo.ttf);
 }
 
+
+
+
+
+#visit_container {
+    width: 1100px;
+    min-height: 500px;
+    margin: 0 auto;
+}
+
+.visitors_group{
+    width: 964px;
+    margin-top: 0 auto;
+    padding: 24px 0 72px;
+    float: left;
+    margin: 0 36px;
+    position: relative;
+}
+
+#input_pack{
+    position: relative;
+    height: 100px;
+}
+
+.input_box{
+    position: relative;
+    width: 704px;
+    padding: 10px 0 10px;
+    margin-right: 10px;
+    float: left;
+}
+
+.input_box input{
+    width: 700px;
+    height: 40px;
+    text-align: center;
+}
+
+.input_button{
+    width: 100px;
+    padding: 10px 0 10px;
+    float: left;
+}
+
+.input_button button{
+    height: 44px;
+    cursor: pointer;
+    padding: 0 15px 0;
+}
+
+#list_group{
+    margin: 0 36px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.visitor_list{
+    table-layout: fixed;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.visitor_list .col_message{
+    width: 100%!important;
+}
+
+.visitor_list .col_date{
+    width: 105px!important;
+}
