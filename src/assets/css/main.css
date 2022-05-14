@@ -406,6 +406,7 @@ body::-webkit-scrollbar {
 .input_box input:focus{
     background-color: rgb(189, 189, 189);
     color: #000000;
+    outline: none;
 }
 
 .input_button{
