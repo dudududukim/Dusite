@@ -149,7 +149,7 @@
   <div class="visitors_group">
     <div id="input_pack">
         <div class="input_box">
-          <input id="vistors_msg" type="text" v-model="input_msg" placeholder="작성란" v-on:keyup.enter="addmsg(input_msg)">
+          <input id="vistors_msg" type="text" v-model="input_msg" placeholder="작성란" v-on:keyup.enter="addmsg(input_msg)" ref="inputtag" @focus="makeblank()" @blur="notfocused()">
         </div>
         <div class="input_button">
           <button @click="addmsg(input_msg)">입력</button>
@@ -220,7 +220,7 @@ export default {
             ],
         messages : [],
         input_msg :'',
-        visible : {'전시관' : false, '글': false, '방명록': false, '소개' : false},
+        visible : {'전시관' : false, '글': false, '방명록': true, '소개' : false},
         clicks : [0, 0, 0, 0, 0]
     }
   },
@@ -241,6 +241,12 @@ export default {
           var inputmsg = {date: today.toLocaleDateString(), message: msg};
           this.messages.unshift(inputmsg);
           this.input_msg = '';
+      },
+      notfocused(){
+          this.$refs.inputtag.placeholder = '작성란';
+      },
+      makeblank(){
+          this.$refs.inputtag.placeholder='';
       },
   }
 }

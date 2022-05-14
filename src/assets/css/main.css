@@ -399,8 +399,13 @@ body::-webkit-scrollbar {
 }
 
 .input_box input::placeholder{
-    color: rgb(38, 0, 255);
+    color: rgb(189, 189, 189);
     letter-spacing: 5px;
+}
+
+.input_box input:focus{
+    background-color: rgb(189, 189, 189);
+    color: #000000;
 }
 
 .input_button{
