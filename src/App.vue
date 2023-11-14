@@ -202,7 +202,7 @@ export default {
     return{
         menus : ['소개', '글', '전시관', '방명록'],
         side_menus : [  {name: '인스타', url: 'https://www.instagram.com/_dudududukim/', visiable: true},
-                        {name: '블로그', url: 'https://blog.naver.com/rlaengux', visiable: true},
+                        {name: '블로그', url: '', visiable: true},
                         {name: '관리자', url: '', visiable: false},
                         {name: '로그인', url:'', visiable: true},],
         /** 나중에 active side menu를 만들어 visible을 이용하자 **/
